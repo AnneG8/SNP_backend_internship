@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "snp-backend-internship"
+version = "0.1.0"
+description = ""
+authors = ["Anna Veselova"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = ">=3.10"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^9.0.2"
+isort = "^7.0.0"
+flake8 = "^7.3.0"
+mypy = "^1.19.1"
+pre-commit = "^4.5.1"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
