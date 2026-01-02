@@ -12,8 +12,7 @@ repos:
       - id: isort
         name: isort
         language: system
-        entry: poetry run isort
-        args: [--check --diff]
+        entry: poetry run isort --check
         pass_filenames: true
         types: [ python ]
         files: \.py$
