@@ -20,10 +20,14 @@ def coincidence(
 
 
 def _is_interval_number(value: Any, interval: range) -> bool:
-    if isinstance(value, bool):
-        return False
-
-    if not isinstance(value, (int, float, Decimal)):
+    if not _is_real_number(value):
         return False
 
     return interval.start <= value < interval.stop
+
+
+def _is_real_number(value: Any) -> bool:
+    if isinstance(value, bool):
+        return False
+
+    return isinstance(value, (int, float, Decimal))
