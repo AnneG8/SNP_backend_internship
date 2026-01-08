@@ -2,6 +2,7 @@ import pytest
 
 from task_04 import sort_list
 
+
 @pytest.mark.parametrize(
     "values, expected",
     [

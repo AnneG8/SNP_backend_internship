@@ -4,7 +4,6 @@ import pytest
 
 import task_05
 
-
 FIXED_NOW = datetime(2001, 3, 24, 22, 33, 44)
 
 
