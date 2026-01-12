@@ -29,3 +29,16 @@ def test_is_healthy(calories, expected):
 def test_is_delicious_always_true(name, calories, expected):
     dessert = Dessert(name, calories)
     assert dessert.is_delicious() is expected
+
+
+@pytest.mark.parametrize(
+    "calories",
+    [
+        "many",
+        [],
+        True,
+    ],
+)
+def test_invalid_calories_type(calories):
+    with pytest.raises(TypeError):
+        Dessert("Cake", calories)
