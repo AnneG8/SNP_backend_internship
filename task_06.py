@@ -7,6 +7,13 @@ class WrongNumberOfPlayersError(RpsGameError):
 
 
 class InvalidPlayerFormatError(RpsGameError):
+    """
+    Исключение на случай неверной структуры данных игроков.
+
+    Дополнительное исключение вне условия задачи, добавлено потому, что
+    ошибок WrongNumberOfPlayersError и NoSuchStrategyError из условия не
+    хватило для покрытия всех возможных сценариев валидации.
+    """
     pass
 
 
