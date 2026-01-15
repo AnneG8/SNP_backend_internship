@@ -17,14 +17,9 @@ class JellyBean(Dessert):
 
     @flavor.setter
     def flavor(self, value: str | None) -> None:
-        if value is None:
-            self._flavor = None
-            return
-
-        if not isinstance(value, str):
-            raise TypeError("Flavor must be a string")
-
-        self._flavor = value
+        self._flavor: str | None = None
+        if isinstance(value, str):
+            self._flavor = value
 
     def is_delicious(self) -> bool:
         if self._flavor is None:

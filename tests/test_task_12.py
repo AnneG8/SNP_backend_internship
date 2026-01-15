@@ -41,5 +41,5 @@ def test_is_healthy(calories, expected):
     ],
 )
 def test_invalid_flavor_type(flavor):
-    with pytest.raises(TypeError):
-        JellyBean(flavor=flavor)
+    jellybean = JellyBean(flavor=flavor)
+    assert jellybean.flavor is None

@@ -32,13 +32,15 @@ def test_is_delicious_always_true(name, calories, expected):
 
 
 @pytest.mark.parametrize(
-    "calories",
+    "name, calories",
     [
-        "many",
-        [],
-        True,
+        (123, "test_calories"),
+        ([], ()),
+        (True, True),
+        (None, None),
     ],
 )
-def test_invalid_calories_type(calories):
-    with pytest.raises(TypeError):
-        Dessert("Cake", calories)
+def test_invalid_attributes_type(name, calories):
+    dessert = Dessert(name, calories)
+    assert dessert.name is None
+    assert dessert.calories is None
