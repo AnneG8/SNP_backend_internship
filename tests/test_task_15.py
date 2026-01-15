@@ -20,7 +20,8 @@ def test_full_encryption_example():
         ("python", "zxy"),
         ("short", "abc"),
         ("WITH SPACES", "cab"),
-        ("helloworld", "fhij"),
+        ("helloworld", "fhig"),
+        ("CODE WITH PYTHON!", "dacb"),
     ],
 )
 def test_encrypt_decrypt_roundtrip(text, key):

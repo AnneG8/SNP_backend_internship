@@ -37,9 +37,8 @@ class BlockTranspositionCipher:
             raise ValueError("Key must contain unique letters")
 
     def _build_order(self) -> list[int]:
-        indexed = list(enumerate(self._key))
-        indexed.sort(key=lambda pair: ord(pair[1]) - ord("a"))
-        return [index for index, _ in indexed]
+        min_char = min([ord(char) for char in self._key])
+        return [ord(char) - min_char for char in self._key]
 
     def _split_into_blocks(self) -> list[str]:
         blocks = []
