@@ -13,9 +13,7 @@ class Dessert:
 
     @name.setter
     def name(self, value: str | None) -> None:
-        self._name: str | None = None
-        if isinstance(value, str):
-            self._name = value
+        self._name = value
 
     @property
     def calories(self) -> int | float | None:
@@ -23,12 +21,19 @@ class Dessert:
 
     @calories.setter
     def calories(self, value: int | float | None) -> None:
-        self._calories: int | float | None = None
-        if isinstance(value, (int, float)) and not isinstance(value, bool):
-            self._calories = value
+        self._calories = value
 
     def is_healthy(self) -> bool:
-        return self._calories is not None and self._calories < 200
+        if self._calories is None or not self._check_calories():
+            return False
+        return self._calories < 200
 
     def is_delicious(self) -> bool:
+        return True
+
+    def _check_calories(self) -> bool:
+        if not isinstance(self._calories, (int, float)):
+            return False
+        if isinstance(self._calories, bool):
+            return False
         return True

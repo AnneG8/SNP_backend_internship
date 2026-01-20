@@ -17,12 +17,10 @@ class JellyBean(Dessert):
 
     @flavor.setter
     def flavor(self, value: str | None) -> None:
-        self._flavor: str | None = None
-        if isinstance(value, str):
-            self._flavor = value
+        self._flavor = value
 
     def is_delicious(self) -> bool:
-        if self._flavor is None:
+        if self._flavor is None or not isinstance(self._flavor, str):
             return True
 
         return self._flavor.lower() != "black licorice"
